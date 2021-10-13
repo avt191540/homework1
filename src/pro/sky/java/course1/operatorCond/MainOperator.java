@@ -52,6 +52,10 @@ public class MainOperator {
             System.out.println(year + " год не является високосным");
         }
 
+        //Задача 4
+
+        System.out.println("Задача 4");
+
 
     }
 }
