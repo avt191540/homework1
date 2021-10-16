@@ -42,12 +42,8 @@ public class MainOperator {
 
         int year = 2021;
 
-        if (year % 4 == 0) {
-            if (((year % 100) != 0) || ((year % 400) == 0)) {
-                System.out.println(year + " год является високосным");
-            } else {
-                System.out.println(year + " год не является високосным");
-            }
+        if ((year % 4 == 0) && ((year % 100 != 0) || (year % 400 == 0))) {
+            System.out.println(year + " год является високосным");
         } else {
             System.out.println(year + " год не является високосным");
         }
@@ -56,6 +52,181 @@ public class MainOperator {
 
         System.out.println("Задача 4");
 
+        // int deliveryDistance = 95;
+        // int timeDelivery = ((deliveryDistance + 19) / 40) + 1;
+        // System.out.println("Потребуется дней: " + timeDelivery);
+
+        int deliveryDistance = 95;
+        int deliveryDistanceMax = 100;
+        int timeDelivery = 1;
+        int timeFound = 0; //Флаг нахождения времени доставки: "0"- найдено и "1" - не найдено
+
+
+        if ((deliveryDistance <= 20) && (timeFound == 0)) {
+            System.out.println("Потребуется дней: " + timeDelivery);
+            timeFound = 1;
+        }
+        timeDelivery = timeDelivery + 1;
+
+        if (((deliveryDistance > 20) && (deliveryDistance <= 60)) && (timeFound == 0)) {
+            System.out.println("Потребуется дней: " + timeDelivery);
+            timeFound = 1;
+        }
+        timeDelivery = timeDelivery + 1;
+
+        if (((deliveryDistance > 60) && (deliveryDistance <= 100)) && (timeFound == 0)) {
+            System.out.println("Потребуется дней: " + timeDelivery);
+            timeFound = 1;
+        }
+        timeDelivery = timeDelivery + 1;
+
+        if (((deliveryDistance > 100) && (deliveryDistance <= 100)) && (timeFound == 0)) {
+            System.out.println("Потребуется дней: " + timeDelivery);
+            timeFound = 1;
+        }
+        timeDelivery = timeDelivery + 1;
+
+        if (deliveryDistance > deliveryDistanceMax) {
+            System.out.println("К сожалению по данному адресу доставка не осуществляется");
+        }
+
+        //Задача 5
+
+        System.out.println("Задача 5");
+
+        int monthNumber = 12;
+        switch (monthNumber) {
+            case 12:
+            case 1:
+            case 2:
+                System.out.println("Месяц под номером " + monthNumber + " принадлежит к сезону Зима");
+                break;
+            case 3:
+            case 4:
+            case 5:
+                System.out.println("Месяц под номером " + monthNumber + " принадлежит к сезону Весна");
+                break;
+            case 6:
+            case 7:
+            case 8:
+                System.out.println("Месяц под номером " + monthNumber + " принадлежит к сезону Лето");
+                break;
+            case 9:
+            case 10:
+            case 11:
+                System.out.println("Месяц под номером " + monthNumber + " принадлежит к сезону Осень");
+                break;
+            default:
+                System.out.println("Месяца под номером " + monthNumber + " не существует");
+        }
+
+        //Задача 6
+
+        System.out.println("Задача 6");
+
+        int age = 19;
+        int salary = 58000;
+
+        if ((salary < 50000) && (age < 23)) {
+            System.out.println
+                    ("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 2) + " рублей");
+        }
+        if ((salary < 50000) && (age >= 23)) {
+            System.out.println
+                    ("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 3) + " рублей");
+        }
+        if (((salary >= 50000) && (salary < 80000)) && (age < 23)) {
+            System.out.println
+                    ("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 2 * 1.2) + " рублей");
+        }
+        if (((salary >= 50000) && (salary < 80000)) && (age >= 23)) {
+            System.out.println
+                    ("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 3 * 1.2) + " рублей");
+        }
+        if ((salary >= 80000) && (age < 23)) {
+            System.out.println
+                    ("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 2 * 1.5) + " рублей");
+        }
+        if ((salary >= 80000) && (age >= 23)) {
+            System.out.println
+                    ("Мы готовы выдать вам кредитную карту с лимитом " + (salary * 3 * 1.5) + " рублей");
+        }
+
+        //Задача 7
+
+        System.out.println("Задача 7");
+
+        int age1 = 25;
+        int salary1 = 60000;
+        int wantedSum = 330000;
+        float paymentLoanBasic = (float) (wantedSum + wantedSum * 0.1) / 12;
+
+        if ((age1 < 23) && (salary1 <= 80000)) {
+            if ((paymentLoanBasic + wantedSum * 0.01 / 12) < (salary1 / 2)) {
+                System.out.println("Максимальный платеж при ЗП " + salary1 +
+                        " равен " + (salary1 / 2) + " рублей. Платеж по кредиту " +
+                        (paymentLoanBasic + wantedSum * 0.01 / 12) + " рублей. Одобрено");
+            } else {
+                System.out.println("Максимальный платеж при ЗП " + salary1 +
+                        " равен " + (salary1 / 2) + " рублей. Платеж по кредиту " +
+                        (paymentLoanBasic + wantedSum * 0.01 / 12) + " рублей. Отказано");
+            }
+        }
+        if (((age1 >= 23) && (age1 < 30)) && (salary1 <= 80000)) {
+            if ((paymentLoanBasic + wantedSum * 0.005 / 12) < (salary1 / 2)) {
+                System.out.println("Максимальный платеж при ЗП " + salary1 +
+                        " равен " + (salary1 / 2) + " рублей. Платеж по кредиту " +
+                        (paymentLoanBasic + wantedSum * 0.005 / 12) + " рублей. Одобрено");
+            } else {
+                System.out.println("Максимальный платеж при ЗП " + salary1 +
+                        " равен " + (salary1 / 2) + " рублей. Платеж по кредиту " +
+                        (paymentLoanBasic + wantedSum * 0.005 / 12) + " рублей. Отказано");
+            }
+        }
+        if ((age1 >= 30) && (salary1 <= 80000)) {
+            if (paymentLoanBasic < (salary1 / 2)) {
+                System.out.println("Максимальный платеж при ЗП " + salary1 +
+                        " равен " + (salary1 / 2) + " рублей. Платеж по кредиту " +
+                        paymentLoanBasic + " рублей. Одобрено");
+            } else {
+                System.out.println("Максимальный платеж при ЗП " + salary1 +
+                        " равен " + (salary1 / 2) + " рублей. Платеж по кредиту " +
+                        paymentLoanBasic + " рублей. Отказано");
+            }
+        }
+        if ((age1 < 23) && (salary1 > 80000)) {
+            if ((paymentLoanBasic + wantedSum * (0.01 / 12 - 0.07 / 12)) < (salary1 / 2)) {
+                System.out.println("Максимальный платеж при ЗП " + salary1 +
+                        " равен " + (salary1 / 2) + " рублей. Платеж по кредиту " +
+                        (paymentLoanBasic + wantedSum * (0.01 / 12 - 0.07 / 12)) + " рублей. Одобрено");
+            } else {
+                System.out.println("Максимальный платеж при ЗП " + salary1 +
+                        " равен " + (salary1 / 2) + " рублей. Платеж по кредиту " +
+                        (paymentLoanBasic + wantedSum * (0.01 / 12 - 0.07 / 12)) + " рублей. Отказано");
+            }
+        }
+        if (((age1 >= 23) && (age1 < 30)) && (salary1 > 80000)) {
+            if ((paymentLoanBasic + wantedSum * (0.005 / 12 - 0.007 / 12)) < (salary1 / 2)) {
+                System.out.println("Максимальный платеж при ЗП " + salary1 +
+                        " равен " + (salary1 / 2) + " рублей. Платеж по кредиту " +
+                        (paymentLoanBasic + wantedSum * (0.005 / 12 - 0.007 / 12)) + " рублей. Одобрено");
+            } else {
+                System.out.println("Максимальный платеж при ЗП " + salary1 +
+                        " равен " + (salary1 / 2) + " рублей. Платеж по кредиту " +
+                        (paymentLoanBasic + wantedSum * (0.005 / 12 - 0.007 / 12)) + " рублей. Отказано");
+            }
+        }
+        if ((age1 >= 30) && (salary1 > 80000)) {
+            if ((paymentLoanBasic - wantedSum * 0.007 / 12) < (salary1 / 2)) {
+                System.out.println("Максимальный платеж при ЗП " + salary1 +
+                        " равен " + (salary1 / 2) + " рублей. Платеж по кредиту " +
+                        (paymentLoanBasic - wantedSum * 0.007 / 12) + " рублей. Одобрено");
+            } else {
+                System.out.println("Максимальный платеж при ЗП " + salary1 +
+                        " равен " + (salary1 / 2) + " рублей. Платеж по кредиту " +
+                        (paymentLoanBasic - wantedSum * 0.007 / 12) + " рублей. Отказано");
+            }
+        }
 
     }
 }
