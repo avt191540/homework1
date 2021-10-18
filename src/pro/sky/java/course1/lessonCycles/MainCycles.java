@@ -34,8 +34,12 @@ public class MainCycles {
         System.out.println("Задание 3");
 
         int yearCurrent = 2021;
-        for (int i = 1896; i <= (yearCurrent + 100); i = i + 79) {
-            System.out.println(i);
+        int yearLessBy200 = yearCurrent - 200;
+        int yearMoreBy100 = yearCurrent + 100;
+        for (int i = yearMoreBy100; i >= yearLessBy200; i = i - 1) {
+            if (i % 79 == 0) {
+                System.out.println(i);
+            }
         }
 
         //Задание 4
@@ -60,6 +64,16 @@ public class MainCycles {
         //Задание 5
 
         System.out.println("Задание 5");
+
+        int a = 0;
+        int b = 1;
+        System.out.print(a + " ");
+        System.out.print(b + " ");
+        for (int i = 1; i <= 8; i++) {
+            System.out.print((a + b) + " ");
+            b = a + b;
+            a = b - a;
+        }
 
 
     }
