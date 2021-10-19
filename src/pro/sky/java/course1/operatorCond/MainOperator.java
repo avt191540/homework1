@@ -18,7 +18,7 @@ public class MainOperator {
 
         //Задача 2
 
-        clientOS = 0;   //clientOS may be: "0" — iOS or "1" — Android
+        clientOS = 1;   //clientOS may be: "0" — iOS or "1" — Android
         int clientDeviceYear = 2015;
 
         System.out.println("Задача 2");
@@ -33,6 +33,25 @@ public class MainOperator {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
         }
         if (clientOS == 1 && clientDeviceYear >= 2015) {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        }
+
+        //Решение задания 2 другим способом
+
+        System.out.println("Задача 2 вариант 2");
+
+        clientOS = 1;   //clientOS may be: "0" — iOS or "1" — Android
+        clientDeviceYear = 2015;
+
+        if (clientOS == 0) {
+            if (clientDeviceYear < 2015) {
+                System.out.println("Установите облегченную версию приложения для iOS по ссылке");
+            } else {
+                System.out.println("Установите версию приложения для iOS по ссылке");
+            }
+        } else if (clientDeviceYear < 2015) {
+            System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        } else {
             System.out.println("Установите версию приложения для Android по ссылке");
         }
 
@@ -89,6 +108,26 @@ public class MainOperator {
         if (deliveryDistance > deliveryDistanceMax) {
             System.out.println("К сожалению по данному адресу доставка не осуществляется");
         }
+
+        //Решение задания 4 другим способом
+
+        System.out.println("Задача 4 вариант 2");
+
+        deliveryDistance = 95;
+        timeDelivery = 1;
+
+        if ((deliveryDistance > 20) && (deliveryDistance <= 60)) {
+            timeDelivery++;
+        }
+        if ((deliveryDistance > 60) && (deliveryDistance <= 100)) {
+            timeDelivery = timeDelivery + 2;
+        }
+        if (deliveryDistance > 100) {
+            System.out.println("К сожалению по данному адресу доставка не осуществляется");
+        } else {
+            System.out.println("Потребуется дней: " + timeDelivery);
+        }
+
 
         //Задача 5
 
