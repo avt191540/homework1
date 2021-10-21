@@ -24,8 +24,7 @@ public class MainCycles {
 
         System.out.println("Задание 2");
 
-        int dateFirstFriday = 1;
-        for (; dateFirstFriday <= 31; dateFirstFriday = dateFirstFriday + 7) {
+        for (int dateFirstFriday = 1; dateFirstFriday <= 31; dateFirstFriday += 7) {
             System.out.println("Сегодня пятница, " + dateFirstFriday + "-е число. Необходимо подготовить отчет.");
         }
 
@@ -46,20 +45,45 @@ public class MainCycles {
 
         System.out.println("Задание 4");
 
+//        for (int i = 1; i <= 30; i++) {
+//            if ((i % 3 == 0) && (i % 5 == 0)) {
+//                System.out.println(i + ": ping pong");
+//            }
+//            if ((i % 3 == 0) && (i % 5 != 0)) {
+//                System.out.println(i + ": ping");
+//            }
+//            if ((i % 3 != 0) && (i % 5 == 0)) {
+//                System.out.println(i + ": pong");
+//            }
+//            if ((i % 3 != 0) && (i % 5 != 0)) {
+//                System.out.println(i + ":");
+//            }
+//        }
+
         for (int i = 1; i <= 30; i++) {
-            if ((i % 3 == 0) && (i % 5 == 0)) {
-                System.out.println(i + ": ping pong");
+            System.out.print(i);
+            if (i % 3 == 0) {
+                if (i % 5 == 0) {
+                    System.out.println(": ping pong");
+                } else {
+                    System.out.println(": ping");
+                }
+            } else if (i % 5 == 0) {
+                System.out.println(": pong");
             }
+
+
             if ((i % 3 == 0) && (i % 5 != 0)) {
-                System.out.println(i + ": ping");
+
             }
             if ((i % 3 != 0) && (i % 5 == 0)) {
-                System.out.println(i + ": pong");
+
             }
             if ((i % 3 != 0) && (i % 5 != 0)) {
-                System.out.println(i + ":");
+                System.out.println(":");
             }
         }
+
 
         //Задание 5
 
