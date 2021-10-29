@@ -2,6 +2,7 @@ package pro.sky.java.course1.lessonString;
 
 public class MainString {
     public static void main(String[] args) {
+
         //Задание 1
 
         System.out.println("Задание 1");
@@ -34,8 +35,9 @@ public class MainString {
         System.out.println("Задание 4 Вариант 1");
 
         fullName = "Иванов Семён Семёнович";
-
-        fullName = fullName.replace('ё', 'е');
+        if (fullName.contains("ё")) {
+            fullName = fullName.replace('ё', 'е');
+        }
         System.out.println("Данные ФИО сотрудника - " + fullName);
 
         //Задание 4 Вариант 2
@@ -43,16 +45,15 @@ public class MainString {
         System.out.println("Задание 4 Вариант 2");
 
         fullName = "Иванов Семён Семёнович";
-
-        String[] fullNameArray = fullName.split(" ");
-        fullName = "";
-        for (int i = 0; i < fullNameArray.length; i++) {
-            if (fullNameArray[i].contains("ё")) {
-                fullNameArray[i] = fullNameArray[i].replace('ё', 'е');
+        if (fullName.contains("ё")) {
+            String[] fullNameArray = fullName.split(" ");
+            for (int i = 0; i < fullNameArray.length; i++) {
+                if (fullNameArray[i].contains("ё")) {
+                    fullNameArray[i] = fullNameArray[i].replace('ё', 'е');
+                }
             }
-            fullName = fullName + fullNameArray[i] + " ";
+            fullName = String.join("  ", fullNameArray);
         }
-        fullName = fullName.trim();
         System.out.println("Данные ФИО сотрудника - " + fullName);
 
 
