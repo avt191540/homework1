@@ -99,6 +99,16 @@ public class MainString {
         //Задание 8
         System.out.println("Задание 8");
 
+        String stringOriginal = "aabccddefgghiijjkk";
+        StringBuilder stringResultD = new StringBuilder();
+        for (int i = 0; i < stringOriginal.length() - 1; i++) {
+            if (stringOriginal.charAt(i) == stringOriginal.charAt(i + 1)) {
+                stringResultD.append(stringOriginal.charAt(i));
+                i++;
+            }
+        }
+        System.out.println(stringResultD);
+
 
     }
 }
