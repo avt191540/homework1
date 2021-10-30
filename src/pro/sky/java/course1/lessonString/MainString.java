@@ -78,6 +78,27 @@ public class MainString {
         //Задание 7
         System.out.println("Задание 7");
 
+        String string1 = "135";
+        String string2 = "246";
+        StringBuilder stringResultB = new StringBuilder(); /* Создаём сущность "stringResultB" с помощью
+        которой создадим строку с результатом */
+        char x; // Объявляем вспомогательную переменную, что бы заполнять сущность символами
+        if (string1.length() != string2.length()) {
+            System.out.println("Ошибка - длины строк string1 и string2 должны быть равны. Конец программы");
+        } else {
+            for (int i = 0; i < string1.length(); i++) {
+                x = string1.charAt(i);
+                stringResultB.append(x);
+                x = string2.charAt(i);
+                stringResultB.append(x);
+            }
+            String stringResult = stringResultB.toString(); // Создаем строку с результатом
+            System.out.println("Данные строки - " + stringResult);
+        }
+
+        //Задание 8
+        System.out.println("Задание 8");
+
 
     }
 }
