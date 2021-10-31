@@ -7,7 +7,7 @@ public class MainMethods {
     public static void main(String[] args) {
 //        task1();
 //        task2();
-//        task3();
+        task3();
 //        task4();
 //        task5();
 //        task6();
@@ -24,6 +24,13 @@ public class MainMethods {
         int clientOS = 0;
         int clientDeviceYear = 2021;
         getVersionApp(clientOS, clientDeviceYear);
+    }
+
+    public static void task3() {
+        System.out.println("Задание 3");
+        int deliveryDistance = 10;
+        int timeDelivery = calculateTimeDelivery(deliveryDistance);
+        System.out.println(timeDelivery);
     }
 
     // Метод для определения высокосного года
@@ -58,6 +65,13 @@ public class MainMethods {
         } else {
             System.out.println("Установите версию приложения для Android по ссылке");
         }
+    }
+
+    // Метод для расчета времени доставки
+    public static int calculateTimeDelivery(int deliveryDistance) {
+        int timeDelivery = deliveryDistance / 2;
+        return timeDelivery;
+
     }
 
 }
