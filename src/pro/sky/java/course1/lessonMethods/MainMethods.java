@@ -6,11 +6,11 @@ import java.util.Arrays;
 public class MainMethods {
 
     public static void main(String[] args) {
-//        task1();
+        task1();
 //        task2();
 //        task3();
 //        task4();
-        task5();
+//        task5();
 //        task6();
     }
 
@@ -53,6 +53,55 @@ public class MainMethods {
         System.out.println("Массив после реверса: " + Arrays.toString(arr));
     }
 
+    public static void task6() {
+        System.out.println("Задание 6");
+        //Создаем бухгалтерскую книгу трат за месяц и выводим её на консоль для контроля результатов
+        int[] spendForMonth = generateRandomArray();
+        System.out.println("Бухгалтерская книга трат за месяц по дням:");
+        printArrayByLines(spendForMonth);
+        //Вычисляем среднюю дневную сумму трат за месяц
+        double averageSpendForDay = calculateAverageOfArray(spendForMonth);
+        System.out.printf("Средняя дневная сумма трат в течении месяца составила %.2f рублей", averageSpendForDay);
+    }
+
+    //Вычисление среднего значения элементов массива
+    public static double calculateAverageOfArray(int[] arr) {
+        int sumOfArray = calculateSumOfArray(arr);
+        double averageValueOfArray = (double) sumOfArray / arr.length;
+        return averageValueOfArray;
+    }
+
+    // Метод для вычисления суммы элементов массива
+    public static int calculateSumOfArray(int[] arr) {
+        int sumOfArray = 0;
+        for (int i : arr) {
+            sumOfArray += i;
+        }
+        return sumOfArray;
+    }
+
+    // Метод для печати элементов массива на консоль построчно
+    public static void printArrayByLines(int[] arr) {
+        int y = 0; //Чтоб выводить элементы массива на консоль построчно (15 элементов в стоке)
+        for (int i : arr) {
+            System.out.print(i + " ");
+            y++;
+            if (y % 15 == 0) {
+                System.out.println();
+            }
+        }
+        System.out.println();
+    }
+
+    //Метод для генерации массива из 30 значений от 100 до 200 тысяч
+    public static int[] generateRandomArray() {
+        java.util.Random random = new java.util.Random();
+        int[] arr = new int[30];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = random.nextInt(100_000) + 100_000;
+        }
+        return arr;
+    }
 
     // Метод для определения высокосного года
     public static void checkIsLeapYear(int year) {
