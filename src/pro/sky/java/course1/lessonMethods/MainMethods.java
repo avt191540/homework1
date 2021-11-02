@@ -6,8 +6,9 @@ import java.util.Arrays;
 public class MainMethods {
 
     public static void main(String[] args) {
-        task1();
-//        task2();
+//        task1();
+//        task2V1();
+        task2V2();
 //        task3();
 //        task4();
 //        task5();
@@ -20,11 +21,18 @@ public class MainMethods {
         checkIsLeapYear(year);
     }
 
-    public static void task2() {
-        System.out.println("Задание 2");
+    public static void task2V1() {
+        System.out.println("Задание 2 Вариант-1");
         int clientOS = 0;
         int clientDeviceYear = 2021;
-        getVersionApp(clientOS, clientDeviceYear);
+        getVersionApp1(clientOS, clientDeviceYear);
+    }
+
+    public static void task2V2() {
+        System.out.println("Задание 2 Вариант-2");
+        int clientOS = 0;
+        int clientDeviceYear = 2021;
+        getVersionApp2(clientOS, clientDeviceYear);
     }
 
     public static void task3() {
@@ -112,8 +120,8 @@ public class MainMethods {
         }
     }
 
-    // Метод для выбора приложения
-    public static void getVersionApp(int clientOS, int clientDeviceYear) {
+    // Метод для выбора приложения - Вариант-1
+    public static void getVersionApp1(int clientOS, int clientDeviceYear) {
         //clientOS may be: "0" — iOS or "1" — Android
         int currentYear = LocalDate.now().getYear();
         if (clientDeviceYear > currentYear) {
@@ -135,6 +143,43 @@ public class MainMethods {
         } else {
             System.out.println("Установите версию приложения для Android по ссылке");
         }
+    }
+
+    // Метод для выбора приложения - Вариант-2
+    public static void getVersionApp2(int clientOS, int clientDeviceYear) {
+        //clientOS may be: "0" — iOS or "1" — Android
+        //int currentYear = LocalDate.now().getYear();
+        if (checkingYearOccurred(clientDeviceYear) > 0) {
+            System.out.println("Год превышает текущий, уточните год.");
+            return;
+        }
+        if ((clientOS > 1 || clientOS < 0)) {
+            System.out.println("Ошибка при указании ОС устройства");
+            return;
+        }
+        if (clientOS == 0) {
+            if (checkingYearOccurred(clientDeviceYear) < 0) {
+                System.out.println("Установите lite-версию приложения для iOS по ссылке");
+            } else {
+                System.out.println("Установите версию приложения для iOS по ссылке");
+            }
+        } else if (checkingYearOccurred(clientDeviceYear) < 0) {
+            System.out.println("Установите lite-версию приложения для Android по ссылке");
+        } else {
+            System.out.println("Установите версию приложения для Android по ссылке");
+        }
+    }
+
+    /*Метод для проверки года по отношению к текущему. Возвращает 0 если текущий год,
+    -1 если год меньше текущего и 1 если год больше текущего*/
+    public static int checkingYearOccurred(int year) {
+        int checkYear = 0;
+        if (year < LocalDate.now().getYear()) {
+            checkYear = -1;
+        } else if (year > LocalDate.now().getYear()) {
+            checkYear = 1;
+        }
+        return checkYear;
     }
 
     // Метод для расчета времени доставки
