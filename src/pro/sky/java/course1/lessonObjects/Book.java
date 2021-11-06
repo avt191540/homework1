@@ -1,11 +1,29 @@
 package pro.sky.java.course1.lessonObjects;
 
 public class Book {
-    private final String authorName;
-    private final int publishingYear;
+    private final String nameBook;
+    private final Author author;
+    private int publishingYear;
 
-    public Book(String authorName, int publishingYear) {
-        this.authorName = authorName;
+    public Book(String nameBook, Author author, int publishingYear) {
+        this.nameBook = nameBook;
         this.publishingYear = publishingYear;
+        this.author = author;
+    }
+
+    public String getNameBook() {
+        return nameBook;
+    }
+
+    public int getPublishingYear() {
+        return publishingYear;
+    }
+
+    public void setPublishingYear(int publishingYear) {
+        this.publishingYear = publishingYear;
+    }
+
+    public Author getAuthor() {
+        return author;
     }
 }
