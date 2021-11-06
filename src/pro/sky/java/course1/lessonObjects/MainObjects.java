@@ -15,7 +15,7 @@ public class MainObjects {
         System.out.print("Автор: " + book1.getAuthor().getAuthorFirstName() + " " + book1.getAuthor().getAuthorLastName() + " * ");
         System.out.print("Год публикации: " + book1.getPublishingYear() + " * ");
         book1.setPublishingYear(2020);
-        System.out.println("Последний год публикации: " + book1.getPublishingYear());
+        System.out.println("Измененный год публикации: " + book1.getPublishingYear());
         System.out.print("Книга-2 - Название: " + book2.getNameBook() + " *  ");
         System.out.print("Автор: " + book2.getAuthor().getAuthorFirstName() + " " + book2.getAuthor().getAuthorLastName() + " * ");
         System.out.println("Год публикации: " + book2.getPublishingYear());
@@ -32,11 +32,15 @@ public class MainObjects {
 
         System.out.println("Задание Сложного уровня");
 
-        Library library1 = new Library(8);
-        library1.addNewBookToLibrary(books, 0);
+        Library library1 = new Library(8); //Создаем новый объект library1
+        library1.addNewBookToLibrary(books, 0); // Заполняем объект library1 книгами
         library1.addNewBookToLibrary(books, 1);
         library1.addNewBookToLibrary(books, 2);
-        library1.printAllBooksFromLibrary();
+        library1.printAllBooksFromLibrary(); // Печатаем содержимое объекта library1
+        // Печатаем информацию о книге, которую находим по ее названию
+        library1.printAboutBookByName("Underworld");
+        // Находим книгу по ее названию меняем ее год пуюликации
+        library1.changeYearPublishingBookByName("Amongst women", 2019);
 
     }
 
