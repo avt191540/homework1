@@ -28,6 +28,16 @@ public class MainObjects {
         books[1] = book2;
         addNewBookToArray(books, "John", "McGahern", "Amongst women", 1990);
         printAllBooksFromArray(books);
+        System.out.println();
+
+        System.out.println("Задание Сложного уровня");
+
+        Library library1 = new Library(8);
+        library1.addNewBookToLibrary(books, 0);
+        library1.addNewBookToLibrary(books, 1);
+        library1.addNewBookToLibrary(books, 2);
+        library1.printAllBooksFromLibrary();
+
     }
 
     public static void addNewBookToArray(Book[] books, String authorFirstName, String authorLastName, String bookName, int publishingYear) {
