@@ -1,21 +1,21 @@
 package pro.sky.java.course1.lessonObjects;
 
 public class Author {
-    private final String FirstName;
-    private final String LastName;
+    private final String firstName;
+    private final String lastName;
 
     public Author(String authorFirstName, String authorLastName) {
-        FirstName = authorFirstName;
-        LastName = authorLastName;
+        firstName = authorFirstName;
+        lastName = authorLastName;
 
     }
 
     public String getAuthorFirstName() {
-        return FirstName;
+        return firstName;
     }
 
     public String getAuthorLastName() {
-        return LastName;
+        return lastName;
     }
 
 
