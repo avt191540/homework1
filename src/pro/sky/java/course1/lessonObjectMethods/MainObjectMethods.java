@@ -29,6 +29,7 @@ public class MainObjectMethods {
         Book book3 = new Book("Amongst women", author3, 1990);
         books[2] = book3;
         System.out.println(author1);
+        System.out.println(book1);
 
 //        System.out.println("Задание Сложного уровня");
 //
