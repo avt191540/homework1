@@ -1,5 +1,7 @@
 package pro.sky.java.course1.lessonObjectMethods;
 
+import java.util.Arrays;
+
 public class Library {
     private final Book[] books;
 
@@ -7,8 +9,38 @@ public class Library {
         this.books = new Book[size];
     }
 
+    @Override
+    public String toString() {
+        System.out.println("Library:");
+        int i = 0;
+        for (; i < books.length; i++) {
+            if (books[i] == null && i == 0) {
+                return "Library is empty";
+            } else if (i == books.length - 1) {
+                break;
+            } else if (books[i + 1] == null) {
+                break;
+            }
+            System.out.println(books[i]);
+        }
+        return books[i].toString();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Library library = (Library) o;
+        return Arrays.equals(books, library.books);
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(books);
+    }
+
     //Добавление книги в Library
-    public void addNewBookToLibrary(Book bookNew) {
+    public void addBook(Book bookNew) {
         for (int i = 0; i < books.length; i++) {
             if (books[i] == null) {
                 books[i] = bookNew;
@@ -17,39 +49,4 @@ public class Library {
         }
         System.out.println("Массив Библиотеки заполнен полностью. Добавление книги не возможно.");
     }
-
-    // Печать информации о всех книгах в библиотеке
-    public void printAllBooksFromLibrary() {
-        for (int i = 0; i < books.length; i++) {
-            if (books[i] != null) {
-                System.out.println(books[i].getAuthor().getAuthorFirstName() + " "
-                        + books[i].getAuthor().getAuthorLastName() + ": "
-                        + books[i].getNameBook() + ": " + books[i].getPublishingYear());
-            }
-        }
-    }
-
-    //Поиск и печать информации о книге по ее названию
-    public void printAboutBookByName(String nameBook) {
-        for (int i = 0; i < books.length; i++) {
-            if (books[i].getNameBook().equals(nameBook)) {
-                System.out.println(books[i].getNameBook() + " by "
-                        + books[i].getAuthor().getAuthorFirstName() + " "
-                        + books[i].getAuthor().getAuthorLastName() + " was published in "
-                        + books[i].getPublishingYear());
-                return;
-            }
-        }
-    }
-
-    // Поиск книги по ее названию и изменение года ее публикации
-    public void changeYearPublishingBookByName(String nameBook, int publishingYearNew) {
-        for (int i = 0; i < books.length; i++) {
-            if (books[i].getNameBook().equals(nameBook)) {
-                books[i].setPublishingYear(publishingYearNew);
-                return;
-            }
-        }
-    }
-
 }
