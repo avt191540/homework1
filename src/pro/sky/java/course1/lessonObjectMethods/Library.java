@@ -12,18 +12,19 @@ public class Library {
     @Override
     public String toString() {
         System.out.println("Library:");
-        int i = 0;
-        for (; i < books.length; i++) {
+        StringBuilder s = new StringBuilder();
+        for (int i = 0; i < books.length; i++) {
             if (books[i] == null && i == 0) {
                 return "Library is empty";
-            } else if (i == books.length - 1) {
-                break;
-            } else if (books[i + 1] == null) {
+            } else if (books[i] == null) {
                 break;
             }
-            System.out.println(books[i]);
+            if (i != 0) {
+                s.append("\n");
+            }
+            s.append(books[i].toString());
         }
-        return books[i].toString();
+        return s.toString();
     }
 
     @Override
