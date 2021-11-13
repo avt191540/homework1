@@ -7,9 +7,9 @@ public class Employee {
     private final String fullName;
     private final int id;
     private int department;
-    private int salary;
+    private double salary;
 
-    public Employee(String fullName, int department, int salary) {
+    public Employee(String fullName, int department, double salary) {
         this.fullName = fullName;
         this.department = department;
         this.salary = salary;
@@ -33,11 +33,11 @@ public class Employee {
         this.department = department;
     }
 
-    public int getSalary() {
+    public double getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(double salary) {
         this.salary = salary;
     }
 
