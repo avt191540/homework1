@@ -18,6 +18,9 @@ public class MainDifficultOption {
         employeeBook1.printAllEmployee();
         System.out.println(employeeBook1.calculationSumSalariesOfMonth());
         System.out.println(employeeBook1.searchEmployeeMinSalary());
+        employeeBook1.deleteEmployeeFromBook("Семенов Константин Григорьевич", 2);
+        employeeBook1.printAllEmployee();
+        employeeBook1.addEmployeeBook("Семенов Константин Григорьевич", 2, 80000);
 
     }
 

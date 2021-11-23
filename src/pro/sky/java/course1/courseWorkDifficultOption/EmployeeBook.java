@@ -9,7 +9,7 @@ public class EmployeeBook {
         this.employees = new Employee[size];
     }
 
-    //Добавление книги в Library
+    //Добавление сотрудника в книгу сотрудников
     public void addEmployeeBook(String fullName, int department, double salary) {
         for (int i = 0; i < employees.length; i++) {
             if (employees[i] == null) {
@@ -19,6 +19,18 @@ public class EmployeeBook {
             }
         }
         System.out.println("Книга сотрудников заполнена полностью. Добавление сотрудника не возможно.");
+    }
+
+    //Удаление сотрудника из книги сотрудников
+    public void deleteEmployeeFromBook(String fullName, int id) {
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i].getFullName() == fullName || employees[i].getId() == id) {
+                employees[i] = null;
+                System.out.println("Сотрудник с ФИО: " + fullName + " или с id: " + id + " УДАЛЕН из книги сотрудников.");
+                return;
+            }
+        }
+        System.out.println("Сотрудника с таким ФИО: " + fullName + " или таким id: " + id + "в книге сотрудников НЕТ.");
     }
 
     public Employee[] getEmployees() {
