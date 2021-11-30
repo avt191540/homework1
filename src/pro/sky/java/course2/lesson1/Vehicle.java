@@ -1,8 +1,8 @@
 package pro.sky.java.course2.lesson1;
 
 public class Vehicle {
-    public String modelName;
-    public int wheelsCount;
+    private final String modelName;
+    private final int wheelsCount;
 
     public Vehicle(String modelName, int wheelsCount) {
         this.modelName = modelName;
@@ -17,5 +17,13 @@ public class Vehicle {
     }
 
     public void checkTrailer() {
+    }
+
+    public String getModelName() {
+        return modelName;
+    }
+
+    public int getWheelsCount() {
+        return wheelsCount;
     }
 }
