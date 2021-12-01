@@ -6,9 +6,21 @@ public class Car extends Vehicle {
         super(modelName, wheelsCount);
     }
 
-    @Override
     public void checkEngine() {
         System.out.println("Проверяем двигатель Car");
     }
 
+    @Override
+    public void updateTyre() {
+        System.out.println("Меняем покрышку колеса Car");
+    }
+
+    @Override
+    public void service() {
+        System.out.println("Обслуживаем " + modelName);
+        for (int i = 0; i < wheelsCount; i++) {
+            updateTyre();
+        }
+        checkEngine();
+    }
 }
