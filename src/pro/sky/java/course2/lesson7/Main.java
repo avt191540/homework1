@@ -13,20 +13,15 @@ public class Main {
         employeeMap1.addOrEditEmployee("Медведев Степан Александрович", 3, 40000);
 
         employeeMap1.printAllEmployee();
+        System.out.println();
 
         employeeMap1.removeEmployee("Иванов Иван Иванович");
+        System.out.println();
 
         employeeMap1.printAllEmployee();
+        System.out.println();
 
-
-//        //System.out.println(Arrays.toString(employeeBook1.getEmployees()));
-//
-//        employeeBook1.printAllEmployee();
-//        System.out.println(employeeBook1.calculationSumSalariesOfMonth());
-//        System.out.println(employeeBook1.searchEmployeeMinSalary());
-//        employeeBook1.deleteEmployeeFromBook("Семенов Константин Григорьевич", 2);
-//        employeeBook1.printAllEmployee();
-//        employeeBook1.addEmployeeBook("Семенов Константин Григорьевич", 2, 80000);
-
+        System.out.println("Затраты на зарплату в месяц составляют:" +
+                employeeMap1.calculationSalariesOfMonth() + "" + " руб.");
     }
 }

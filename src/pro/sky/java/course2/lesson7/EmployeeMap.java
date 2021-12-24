@@ -41,10 +41,18 @@ public class EmployeeMap {
         } else {
             System.out.println("В книге удалена запись о сотруднике: " + fullName);
         }
-//        for (String name: employeeMap.keySet()) {
-//            if (name.equals(fullName)) {
-//
-//            }
-//            System.out.println(employee);
+    }
+
+    //Рассчет затрат на зарплату в месяц
+    public double calculationSalariesOfMonth() {
+        double sumSalaries = 0;
+        if (employeeMap.isEmpty()) {
+            System.out.println("В книге сотрудников нет записей.");
+            return sumSalaries;
+        }
+        for (Employee employee : employeeMap.values()) {
+            sumSalaries = sumSalaries + employee.getSalary();
+        }
+        return sumSalaries;
     }
 }
