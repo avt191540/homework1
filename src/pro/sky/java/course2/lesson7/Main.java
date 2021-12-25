@@ -15,6 +15,12 @@ public class Main {
         employeeMap1.printAllEmployee();
         System.out.println();
 
+        employeeMap1.addOrEditEmployee("Сидоров Александр Степанович", 3, 90000);
+        System.out.println();
+
+        employeeMap1.printAllEmployee();
+        System.out.println();
+
         employeeMap1.removeEmployee("Иванов Иван Иванович");
         System.out.println();
 
@@ -23,5 +29,10 @@ public class Main {
 
         System.out.println("Затраты на зарплату в месяц составляют:" +
                 employeeMap1.calculationSalariesOfMonth() + "" + " руб.");
+        System.out.println();
+
+        System.out.println("Поиск сотрудника в книге: ");
+        System.out.println(employeeMap1.searchEmployee("Петров Сергей Анатольевич"));
+
     }
 }

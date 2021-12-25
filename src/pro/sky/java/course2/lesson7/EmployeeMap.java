@@ -4,9 +4,11 @@ import pro.sky.java.course1.courseWork.Employee;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.NoSuchElementException;
 
 public class EmployeeMap {
     private final Map<String, Employee> employeeMap;
+//    private Object NullPointerException;
 
     public EmployeeMap() {
         this.employeeMap = new HashMap<String, Employee>();
@@ -14,6 +16,10 @@ public class EmployeeMap {
 
     //Добавление сотрудника в книгу или редактирование
     public void addOrEditEmployee(String fullName, int department, double salary) {
+        if (employeeMap.containsKey(fullName)) {
+            System.out.println("В книге уже есть запись о сотруднике " + fullName +
+                    ". Она будет отредактирована в соответствии с предоставленными данными.");
+        }
         Employee employee = new Employee(fullName, department, salary);
         employeeMap.put(fullName, employee);
     }
@@ -55,4 +61,17 @@ public class EmployeeMap {
         }
         return sumSalaries;
     }
+
+    //Поиск сотрудника
+    public Employee searchEmployee(String fullName) {
+        if (employeeMap.isEmpty()) {
+            throw new NullPointerException("Employee book is empty");
+        }
+        if (employeeMap.containsKey(fullName)) {
+            return employeeMap.get(fullName);
+        }
+        throw new NoSuchElementException("Employee not found");
+    }
+
+
 }
